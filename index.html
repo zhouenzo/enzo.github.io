@@ -64,6 +64,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-环境安装" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/enzo.github.io/2022/03/27/%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/" class="article-date">
+  <time datetime="2022-03-27T06:55:17.758Z" itemprop="datePublished">2022-03-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h2><h2 id="问题：磁盘分区占满"><a href="#问题：磁盘分区占满" class="headerlink" title="问题：磁盘分区占满"></a>问题：磁盘分区占满</h2><p>1、磁盘分区占用满，大部分场景下是因为日志问题</p>
+<p>解决方式：定位</p>
+<p>一般使用df -h</p>
+<p>可以看到哪些挂载目录下的磁盘被使用了多少。</p>
+<p>找到占用多的磁盘，使用du -h</p>
+<p>层层查找文件，看看是哪些文件占用空间较大。</p>
+<p>如果能找到相关文件，建议不要直接删除，可以将该日志文件写为空。</p>
+<p>2、如果df -h 和du -h得到的结果不一样</p>
+<p>df -h显示磁盘占满，但是du -h 没有大文件。</p>
+<p>这种情况一般是文件已被删除，但是句柄未被释放。</p>
+<p>此时需要使用lsof | grep ‘DELETE’</p>
+<p>查看哪些进程持有已被删除大文件的句柄</p>
+<p>kill -9 pid</p>
+<p>即可。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhouenzo.github.io/enzo.github.io/2022/03/27/%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/" data-id="cl18xgnte00019guc7zl6hu3k" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/enzo.github.io/2022/03/13/hello-world/" class="article-date">
@@ -103,7 +143,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zhouenzo.github.io/enzo.github.io/2022/03/13/hello-world/" data-id="cl16h473r0000souc3v0ebpr6" class="article-share-link">Share</a>
+      <a data-url="https://zhouenzo.github.io/enzo.github.io/2022/03/13/hello-world/" data-id="cl18xgnl300009guc4pzu8ytq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -142,6 +182,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/enzo.github.io/2022/03/27/%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/">(no title)</a>
+          </li>
         
           <li>
             <a href="/enzo.github.io/2022/03/13/hello-world/">Hello World</a>
